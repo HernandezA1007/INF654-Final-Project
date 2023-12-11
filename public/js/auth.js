@@ -15,6 +15,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// listen for auth status changes
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        console.log("User logged in: ", user.email);
+        getMovies(db).then((snapshot) => {
+            setupMovies(snapshot)
+        })
+        setupUI(user);
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            addDoc(collection(db, "movies"), {
+                title: form.title.value,
+                description: form.description.value
+            }).catch((error) => {
+                console.log(error);
+            });
+            form.title.value = "";
+            form.description.value = "";
+        });
+    } else {
+        console.log("User logged out");
+        setupUI();
+        setupMovies([]);
+    }
+});
+
 /* User Authentication */
 // signup
 const signupForm = document.querySelector("#signup-form");
