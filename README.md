@@ -1,6 +1,8 @@
-# INF654-Final-Project
+# INF654-Final-Project - Movie Log Watchlist
 
-This project is to develop a Progressive Web Application that incorporates key PWA features that we learned. Including a manifest file, service worker, offline capabilities, data storage, and integration with Firebase for database operations and user authentication. I continuted the prototype developed in Assignment 3 that was implemented using CSS, HTML, and Materialize CSS framework. The web application is designed to catalog and manage a collection of movies like a watch list. Users can enter movie/show entries...
+This project is to develop a Progressive Web Application that incorporates key PWA features that we learned. Including a manifest file, service worker, offline capabilities, data storage, and integration with Firebase for database operations and user authentication. I continuted the prototype developed in Assignment 3 that was implemented using CSS, HTML, and Materialize CSS framework. The web application is designed to serve as a pesronal movie collection manager, where users can catalog and manager their movie library/collection.
+
+catalog and manage a collection of movies like a watch list. Users can enter movie/show entries...
 
 ## Features
 
@@ -27,13 +29,21 @@ This project is to develop a Progressive Web Application that incorporates key P
 
 ## Requirements/Development Roadmap or checklist / progress?
 
-- [x] Something
-- [x] Someting someting
-- [ ] okay
+- [x] Manifest.json
+- [x] Service Worker File
+- [x] Handling Service Worker
+- [x] Local Data Caching
+- [x] Offline Functionality
+- [x] Firebase Integration and CRUD Operations
+- [x] User Authentication
+- [x] Data Storage in IndexedDB
+- [ ] Push Notifications
 
 ## Gallery
 
 (insert screenshots)
+
+![home page]()
 
 ## Future Enchancements
 
@@ -46,3 +56,4 @@ This project is to develop a Progressive Web Application that incorporates key P
 7. An API or database for movies/shows -> search
 8. Provides description
 9. Allow friendly user-interface for server/local hosting
+10. Contact page currently not supported

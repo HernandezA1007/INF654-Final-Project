@@ -1,7 +1,7 @@
 /* Service Workers */
 
-const dynamicCache = "Dyanmic-cache-v7"; // changed to v2 for add, v3 for delete, v4 crud, v5 for offline, v6 for modal
-const staticCache = "Static-cache-v6"; // updated to v2 for DOM, v3 host, v4 for ?, v5 for modal, 
+const dynamicCache = "Dyanmic-cache-v8"; // changed to v2 for add, v3 for delete, v4 crud, v5 for offline, v6 for modal, v7 for final initial, 
+const staticCache = "Static-cache-v7"; // updated to v2 for DOM, v3 host, v4 for ?, v5 for modal, v6 for final initial,
 
 // renamed index.html to movies.html so the service workers cache doesn't mess with my other projects? -> back to index.html
 const assets = [ 
@@ -93,4 +93,25 @@ self.addEventListener("fetch", function (event) {
             .catch(() => caches.match("/pages/fallback.html"))
         );
     }
+});
+
+// push notification event
+self.addEventListener("push", function (event) {
+    // assuming event.data is a text string, for simplicity
+    let notificationText = event.data.text();
+
+    const options = {
+        body: notificationText,
+        // maybe these below?
+        // icon: "/img/movie.png",
+        // badge: "/img/movie.png",
+        // vibrate: [100, 50, 100],
+        // data: {
+        //     primaryKey: 1
+        // }
+    };
+
+    event.waitUntil(
+        self.registration.showNotification("Movie Log", options)
+    );
 });
