@@ -37,7 +37,7 @@ catalog and manage a collection of movies like a watch list. Users can enter mov
 - [x] Firebase Integration and CRUD Operations
 - [x] User Authentication
 - [x] Data Storage in IndexedDB
-- [ ] Push Notifications
+- [x] Push Notifications (local only)
 
 ## Gallery
 

@@ -71,6 +71,17 @@ form.addEventListener("submit", (event) => {
     addDoc(collection(db, "movies"), {
         title: form.title.value,
         description: form.description.value
+    }).then(() => {
+        // Show notification
+        if (Notification.permission === "granted") {
+            navigator.serviceWorker.getRegistration().then(reg => {
+                reg.showNotification("Movie Added", {
+                    body: `${form.title.value} was added`,
+                    icon: "/img/movie32.png",
+                    vibrate: [100, 50, 100]
+                });
+            });
+        }
     }).catch((error) => {
         console.log(error);
     });

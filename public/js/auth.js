@@ -73,6 +73,16 @@ logout.addEventListener("click", (e) => {
     e.preventDefault();
     signOut(auth).then(() => {
         console.log("user signed out");
+        // show notification
+        if (Notification.permission === "granted") {
+            navigator.serviceWorker.getRegistration().then(reg => {
+                reg.showNotification("Logged Out", {
+                    body: "You have been logged out",
+                    icon: "/img/movie32.png",
+                    virate: [100, 50, 100]
+                });
+            });
+        }
     }).catch((error) => { 
         // an error happened
     });
@@ -95,6 +105,16 @@ loginForm.addEventListener("submit", (e) => {
         M.Modal.getInstance(modal).close();
         loginForm.reset();
         // ...
+        // show notification
+        if (Notification.permission === "granted") {
+            navigator.serviceWorker.getRegistration().then(reg => {
+                reg.showNotification("Login Successful", {
+                    body: `Welcome back, ${user.email}`,
+                    icon: "/img/movie32.png",
+                    virate: [100, 50, 100]
+                });
+            });
+        }
     }).catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;

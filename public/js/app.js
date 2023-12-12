@@ -55,7 +55,7 @@ function askForNotificationPermission() {
   });
 }
 
-askForNotificationPermission();
+// askForNotificationPermission(); // call to test notification
 
 // Display notification
 function displayTestNotification() {

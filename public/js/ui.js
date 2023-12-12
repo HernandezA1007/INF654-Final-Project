@@ -60,7 +60,7 @@ const setupMovies = (data) => {
 const renderMovie = (data, id) => {
     const html = `
     <div class="card-panel movie white row" data-id ="${id}">
-              <img src="/public/img/movie.png" class="responsive-img materialboxed" alt="">
+              <img src="/img/movie.png" class="responsive-img materialboxed" alt="">
               <div class="movie-detail">
                   <div class="movie-title">${data.title}</div>
                   <div class="movie-description">${data.description}</div>

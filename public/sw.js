@@ -1,7 +1,7 @@
 /* Service Workers */
 
-const dynamicCache = "Dyanmic-cache-v8"; // changed to v2 for add, v3 for delete, v4 crud, v5 for offline, v6 for modal, v7 for final initial, 
-const staticCache = "Static-cache-v7"; // updated to v2 for DOM, v3 host, v4 for ?, v5 for modal, v6 for final initial,
+const dynamicCache = "Dyanmic-cache-v9"; // changed to v2 for add, v3 for delete, v4 crud, v5 for offline, v6 for modal, v7 for final initial, v8 for noti
+const staticCache = "Static-cache-v8"; // updated to v2 for DOM, v3 host, v4 for ?, v5 for modal, v6 for final initial, v7 for noti
 
 // renamed index.html to movies.html so the service workers cache doesn't mess with my other projects? -> back to index.html
 const assets = [ 
